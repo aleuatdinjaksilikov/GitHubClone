@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/fragment_home"
+        android:title="@string/tv_home"
+        android:icon="@drawable/ic_home"/>
+
+    <item android:id="@+id/fragment_notifications"
+        android:title="@string/tv_notifications"
+        android:icon="@drawable/ic_notification"/>
+
+    <item android:id="@+id/fragment_explore"
+        android:title="@string/tv_explore"
+        android:icon="@drawable/ic_telescope"/>
+
+    <item android:id="@+id/fragment_profile"
+        android:title="@string/tv_profile"
+        android:icon="@drawable/ic_user_2"/>
+</menu>

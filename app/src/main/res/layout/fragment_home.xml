@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/tool_bar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_home"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_24"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tool_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tool_bar" />
+
+    <ImageView
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_add_circle"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_home" />
+
+    <ImageView
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home"
+        app:layout_constraintEnd_toStartOf="@id/btn_add"
+        app:layout_constraintTop_toTopOf="@id/tv_home" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_ver1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_ver2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <TextView
+                android:id="@+id/tv_my_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/tv_my_work"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="@id/tv_my_work"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintTop_toTopOf="@id/tv_my_work" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_issues"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_my_work">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_issues" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_issues"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pull_requests"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_issues">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_pull_requests" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_pull_requests"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_discussions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_pull_requests">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_discussions" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_discussions"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_repositories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_discussions">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_repositories" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_repositories"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_organizations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_repositories">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_organizations" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_organizations"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_starred"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_organizations">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_starred" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tv_starred"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_starred" />
+
+            <TextView
+                android:id="@+id/tv_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/tv_favorites"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+            <TextView
+                android:id="@+id/tv_favorites_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="@string/tv_add_favorite_repositotories_for_quick_access_at_any_time_without_having_to_search"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/tv_favorites" />
+
+            <Button
+                android:id="@+id/btn_add_favorites"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/tv_add_favorites"
+                android:textAllCaps="true"
+                android:textColor="@color/color_blue"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/tv_favorites_desc" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_add_favorites" />
+
+
+            <TextView
+                android:id="@+id/tv_shortcuts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/tv_shortcuts"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+            <TextView
+                android:id="@+id/tv_shortcuts_desc1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/tv_the_things_you_need_one_tap_away"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/tv_shortcuts" />
+
+            <TextView
+                android:id="@+id/tv_shortcuts_desc2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:text="@string/tv_fast_access_your_lists_of_issues_pull_requests_or_discussions"
+                app:layout_constraintTop_toBottomOf="@id/tv_shortcuts_desc1"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"/>
+
+            <Button
+                android:id="@+id/btn_get_started"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/tv_get_started"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="true"
+                android:textColor="@color/color_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/tv_shortcuts_desc2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

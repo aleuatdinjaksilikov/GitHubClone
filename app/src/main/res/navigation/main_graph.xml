@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/fragment_login">
+
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.example.githubclone.ui.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_fragment_main_to_repositoryFragment"
+            app:destination="@id/repositoryFragment" />
+        <action
+            android:id="@+id/action_fragment_main_to_repositoryHomeFragment"
+            app:destination="@id/repositoryHomeFragment" />
+        <action
+            android:id="@+id/action_fragment_main_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.example.githubclone.ui.LoginScreen.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_main"
+            app:destination="@id/fragment_main"
+            app:popUpTo="@+id/fragment_login"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/repositoryFragment"
+        android:name="com.example.githubclone.ui.RepositoryScreen.RepositoryFragment"
+        android:label="RepositoryFragment"
+        tools:layout="@layout/fragment_repository"/>
+    <fragment
+        android:id="@+id/repositoryHomeFragment"
+        android:name="com.example.githubclone.ui.RepositoryScreenHome.RepositoryHomeFragment"
+        android:label="RepositoryHomeFragment"
+        tools:layout="@layout/fragment_repository_home"/>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.githubclone.ui.SearchFragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_searchRepositoryFragment"
+            app:destination="@id/searchRepositoryFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_searchUserFragment"
+            app:destination="@id/searchUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchRepositoryFragment"
+        android:name="com.example.githubclone.ui.SearchFragment.SearchRepositoryFragment"
+        android:label="SearchRepositoryFragment"
+        tools:layout="@layout/rc_item_repository_search">
+        <argument
+            android:name="text"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserFragment"
+        android:name="com.example.githubclone.ui.SearchFragment.SearchUserFragment"
+        android:label="SearchUserFragment"
+        tools:layout="@layout/fragment_search_user">
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>

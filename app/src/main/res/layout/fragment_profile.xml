@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:id="@+id/tool_bar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_back"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/tool_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tool_bar"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <ImageView
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintEnd_toStartOf="@id/btn_add"
+        app:layout_constraintTop_toTopOf="@id/btn_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_ver1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_ver2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_user"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_starred"
+                app:shapeAppearanceOverlay="@style/CornerSize50Percent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Aleuatdin Jaksilikov"
+                android:textSize="@dimen/text_size_22"
+                android:layout_marginStart="13dp"
+                android:fontFamily="@font/poppins_semibold"
+                app:layout_constraintTop_toTopOf="@id/iv_user"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintStart_toEndOf="@id/iv_user"/>
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="alewatdinjaksilikov"
+                android:textSize="16sp"
+                android:layout_marginStart="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ver2"
+                app:layout_constraintStart_toEndOf="@id/iv_user"/>
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_user"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                tools:text="Uzbekistan,Nukus"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/iv_location"
+                app:layout_constraintBottom_toBottomOf="@id/iv_location"
+                app:layout_constraintStart_toEndOf="@id/iv_location"/>
+
+            <ImageView
+                android:id="@+id/iv_user_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_user"
+                app:layout_constraintTop_toBottomOf="@id/iv_location"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"/>
+
+            <TextView
+                android:id="@+id/tv_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/dm_sans"
+                tools:text="8 followers"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/iv_user_logo"
+                app:layout_constraintStart_toEndOf="@id/iv_user_logo"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user_logo"/>
+
+            <ImageView
+                android:id="@+id/iv_dot"
+                android:layout_width="5dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dot"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_followers"
+                app:layout_constraintStart_toEndOf="@id/tv_followers"
+                app:layout_constraintTop_toTopOf="@id/tv_followers" />
+
+            <TextView
+                android:id="@+id/tv_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                tools:text="9 following"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/tv_followers"
+                app:layout_constraintBottom_toBottomOf="@id/tv_followers"
+                app:layout_constraintStart_toEndOf="@id/iv_dot"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_followers" />
+
+            <ImageView
+                android:id="@+id/iv_start"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_star"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"/>
+
+            <TextView
+                android:id="@+id/tv_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/tv_popular"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_18"
+                app:layout_constraintTop_toTopOf="@id/iv_start"
+                app:layout_constraintStart_toEndOf="@id/iv_start"
+                app:layout_constraintBottom_toBottomOf="@id/iv_start"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_repository"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                tools:listitem="@layout/rc_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+                app:layout_constraintTop_toBottomOf="@id/iv_start"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_repository" />
+
+            <LinearLayout
+                android:id="@+id/ll_repositories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_repositories" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/tv_repositories"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_amount_repository"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="@dimen/text_size_18"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_organizations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_repositories"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_organizations" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/tv_organizations"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_amount_organizations"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="@dimen/text_size_18"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_starred"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_organizations">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_starred" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/rubik"
+                    android:text="@string/tv_starred"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_amount_starred"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:layout_marginEnd="16dp"
+                        android:textSize="@dimen/text_size_18"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GitHubClone</string>
+    <string name="tv_home">Home</string>
+    <string name="tv_my_work">My Work</string>
+    <string name="tv_issues">Issues</string>
+    <string name="tv_pull_requests">Pull Requests</string>
+    <string name="tv_discussions">Discussions</string>
+    <string name="tv_repositories">Repositories</string>
+    <string name="tv_organizations">Organizations</string>
+    <string name="tv_starred">Starred</string>
+    <string name="tv_favorites">Favorites</string>
+    <string name="tv_add_favorite_repositotories_for_quick_access_at_any_time_without_having_to_search">Add favorite repositotories for quick access at any time, without having to search</string>
+    <string name="tv_add_favorites">Add Favorites</string>
+    <string name="tv_shortcuts">Shortcuts</string>
+    <string name="tv_the_things_you_need_one_tap_away">The things you need, one tap away</string>
+    <string name="tv_fast_access_your_lists_of_issues_pull_requests_or_discussions">Fast access your lists of Issues,Pull Requests, or Discussions</string>
+    <string name="tv_popular">Popular</string>
+    <string name="tv_notifications">Notifications</string>
+    <string name="tv_explore">Explore</string>
+    <string name="tv_profile">Profile</string>
+    <string name="tv_get_started">Get Started</string>
+    <string name="tv_sign_in_with_github_enterprise">Sign in with github enterprise</string>
+    <string name="tv_sign_in_with_github">Sign in with github</string>
+    <string name="tv_find_your_stuff">Find your stuff.</string>
+    <string name="tv_search_all_of_github_for_people_repositories_organizations_issues_and_pull_requests">Search all of Github for People,Repositories,Organizations,Issues,and Pull Requests</string>
+    <string name="tv_search_github">Search Github</string>
+    <string name="tv_repositories_with">Repositories with \"%s\"</string>
+    <string name="tv_issues_with">Issues with \"%s\"</string>
+    <string name="tv_pull_requests_with">Pull Requests with \"%s\"</string>
+    <string name="tv_people_with">People with \"%s\"</string>
+    <string name="tv_organizations_with">Organizations with \"%s\"</string>
+    <string name="tv_jump_to">Jump to \"%s\"</string>
+    <string name="tv_recent_searches">Recent searches</string>
+    <string name="clear">CLEAR</string>
+</resources>
