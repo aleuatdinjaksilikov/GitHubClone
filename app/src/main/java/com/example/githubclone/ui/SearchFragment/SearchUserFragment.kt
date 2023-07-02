@@ -43,12 +43,15 @@ class SearchUserFragment:Fragment(R.layout.fragment_search_user) {
     }
 
     private fun initObservables() {
-        lifecycleScope.launch {
-            viewModel.getSearchUser(args.name)
-        }
+        viewModel.getUsersFlow.onEach {
+            adapter.submitList(it.items)
+        }.launchIn(lifecycleScope)
     }
 
     private fun initVariables() {
         binding.rvUsers.adapter = adapter
+        lifecycleScope.launch {
+            viewModel.getSearchUser(args.name)
+        }
     }
 }

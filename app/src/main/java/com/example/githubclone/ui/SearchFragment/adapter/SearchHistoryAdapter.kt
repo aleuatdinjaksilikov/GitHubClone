@@ -28,6 +28,7 @@ class SearchHistoryAdapter(): ListAdapter<HistoryData, SearchHistoryAdapter.Sear
         }
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchHistoryVH {
         return SearchHistoryVH(
             RcItemHistoryBinding.inflate(
