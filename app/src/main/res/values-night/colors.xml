@@ -4,4 +4,5 @@
     <color name="black">#FFFFFFFF</color>
     <color name="white">#FF000000</color>
     <color name="color_grey_custom">#17181C</color>
+    <color name="color_background_login">#17181C</color>
 </resources>

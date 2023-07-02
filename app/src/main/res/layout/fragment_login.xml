@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFF0F5"
+    android:background="@color/color_background_login"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -27,7 +27,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btn_sign_in_github"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/black" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_sign_in_github"
