@@ -38,12 +38,14 @@ class RepositoryHomeFragment:Fragment(R.layout.fragment_repository_home) {
     private fun initObservables() {
         viewModel.getRepositoriesFlow.onEach {
             adapter.submitList(it)
+            binding.progressBar.visibility = View.GONE
         }.launchIn(lifecycleScope)
     }
 
     private fun initVariables() {
         binding.rvRepositoryHome.adapter = adapter
         lifecycleScope.launch {
+            binding.progressBar.visibility = View.VISIBLE
             viewModel.getRepositories()
         }
     }

@@ -1,6 +1,8 @@
 package com.example.githubclone.ui.SearchFragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isEmpty
@@ -28,7 +30,6 @@ class SearchFragment:Fragment(R.layout.fragment_search) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSearchBinding.bind(view)
-
 
         initVariables()
         initListeners()
@@ -165,5 +166,8 @@ class SearchFragment:Fragment(R.layout.fragment_search) {
             }
 
         })
+
+//        app:iconifiedByDefault="false"
+//        app:queryHint="Search GitHub"
     }
 }

@@ -42,12 +42,14 @@ class SearchRepositoryFragment:Fragment(R.layout.fragment_search_repo) {
     private fun initObservables() {
         viewModel.getRepositoriesByNameFlow.onEach {
             adapter.submitList(it.items)
+            binding.progressBar.visibility = View.GONE
         }.launchIn(lifecycleScope)
     }
 
     private fun initVariables() {
         binding.rvRepositorySearch.adapter = adapter
         lifecycleScope.launch {
+            binding.progressBar.visibility = View.VISIBLE
             viewModel.getRepositoriesByName(args.text)
         }
     }

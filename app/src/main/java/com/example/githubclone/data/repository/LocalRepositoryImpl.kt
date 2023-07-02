@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class LocalRepositoryImpl @Inject constructor(private val appDao: AppDao):LocalRepository {
+
     override suspend fun insertText(historyData: HistoryData) {
         appDao.insertText(historyData = historyData)
     }

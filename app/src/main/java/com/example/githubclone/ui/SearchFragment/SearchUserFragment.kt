@@ -45,12 +45,14 @@ class SearchUserFragment:Fragment(R.layout.fragment_search_user) {
     private fun initObservables() {
         viewModel.getUsersFlow.onEach {
             adapter.submitList(it.items)
+            binding.progressBar.visibility = View.GONE
         }.launchIn(lifecycleScope)
     }
 
     private fun initVariables() {
         binding.rvUsers.adapter = adapter
         lifecycleScope.launch {
+            binding.progressBar.visibility = View.VISIBLE
             viewModel.getSearchUser(args.name)
         }
     }

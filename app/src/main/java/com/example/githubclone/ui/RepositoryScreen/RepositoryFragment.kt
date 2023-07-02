@@ -38,6 +38,7 @@ class RepositoryFragment:Fragment(R.layout.fragment_repository) {
     private fun initVariables() {
         binding.rvRepositoryFragment.adapter = adapter
         lifecycleScope.launch {
+            binding.progressBar.visibility = View.VISIBLE
             viewModel.getRepositories()
         }
     }
@@ -45,6 +46,7 @@ class RepositoryFragment:Fragment(R.layout.fragment_repository) {
     private fun initObservable() {
         viewModel.getRepositoriesFlow.onEach {
             adapter.submitList(it)
+            binding.progressBar.visibility = View.GONE
         }.launchIn(lifecycleScope)
     }
 

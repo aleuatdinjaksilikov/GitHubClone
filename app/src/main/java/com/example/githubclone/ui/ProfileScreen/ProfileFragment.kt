@@ -37,6 +37,7 @@ class ProfileFragment:Fragment(R.layout.fragment_profile) {
     private fun initVariables() {
         binding.rvRepository.adapter = recyclerAdapterProfile
         lifecycleScope.launch {
+            binding.progressBar.visibility = View.VISIBLE
             viewModel.getUserInfo()
             viewModel.getRepositories()
         }
@@ -62,6 +63,7 @@ class ProfileFragment:Fragment(R.layout.fragment_profile) {
                 binding.tvLocation.text = it.location
                 binding.tvFollowers.text = "${it.followers} followers"
                 binding.tvFollowing.text = "${it.following} following"
+            binding.progressBar.visibility = View.GONE
         }.launchIn(lifecycleScope)
 
         viewModel.getRepositoriesFlow.onEach {

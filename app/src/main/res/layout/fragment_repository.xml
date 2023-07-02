@@ -25,6 +25,18 @@
         app:layout_constraintTop_toTopOf="@id/tool_bar"
         app:tint="@color/black" />
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
