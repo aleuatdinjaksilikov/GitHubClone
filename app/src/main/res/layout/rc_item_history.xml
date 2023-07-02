@@ -29,6 +29,7 @@
         android:src="@drawable/ic_arrow_up_left"
         app:layout_constraintTop_toTopOf="@id/text_history"
         app:layout_constraintBottom_toBottomOf="@id/text_history"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
