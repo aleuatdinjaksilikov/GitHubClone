@@ -1,10 +1,7 @@
 package com.example.githubclone.ui.LoginScreen
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
-import android.graphics.Paint.Style
 import android.net.Uri
 import android.os.Bundle
 import android.text.Spannable
@@ -12,7 +9,6 @@ import android.text.SpannableString
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
-import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -25,9 +21,6 @@ import com.example.githubclone.databinding.FragmentLoginBinding
 import com.example.githubclone.ui.LoginScreen.vm.LoginFragmentVM
 import com.example.githubclone.utils.SharedPref
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -45,7 +38,6 @@ class LoginFragment:Fragment(R.layout.fragment_login) {
             )
         }else{
             initObservers()
-
             initListeners()
         }
     }
@@ -59,12 +51,11 @@ class LoginFragment:Fragment(R.layout.fragment_login) {
 
     private fun initObservers() {
 
-        viewModel.loginFlow.observe(viewLifecycleOwner) {
+        viewModel.loginLiveData.observe(viewLifecycleOwner) {
             SharedPref.pref.edit().putInt("login_amount",1).apply()
             SharedPref.pref.edit().putString("access_token",it?.access_token).apply()
             findNavController().navigate(LoginFragmentDirections.actionFragmentLoginToFragmentMain())
         }
-
         paramSpannableText()
     }
 

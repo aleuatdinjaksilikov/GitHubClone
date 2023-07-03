@@ -134,10 +134,6 @@ class SearchFragment:Fragment(R.layout.fragment_search) {
                         llOrganizations.visibility = View.GONE
                         llJumpTo.visibility = View.GONE
 
-//                        binding.tvRecentSearches.visibility = View.VISIBLE
-//                        binding.tvClear.visibility = View.VISIBLE
-//                        binding.rvHistory.visibility = View.VISIBLE
-
                         lifecycleScope.launch {
                             viewModel.historyList.collect {
                                 binding.rvHistory.adapter = adapter
@@ -186,8 +182,5 @@ class SearchFragment:Fragment(R.layout.fragment_search) {
             }
 
         })
-
-//        app:iconifiedByDefault="false"
-//        app:queryHint="Search GitHub"
     }
 }

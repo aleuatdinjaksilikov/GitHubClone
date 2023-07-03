@@ -10,9 +10,9 @@ import com.example.githubclone.data.models.GetUserRepositoriesResponseDataItem
 import com.example.githubclone.databinding.RcItemBinding
 
 class RecyclerAdapterProfile():
-    ListAdapter<GetUserRepositoriesResponseDataItem, RecyclerAdapterProfile.RecyclerAdapterVH>(diffUtil) {
+    ListAdapter<GetUserRepositoriesResponseDataItem, RecyclerAdapterProfile.RecyclerAdapterProfileVH>(diffUtil) {
 
-    inner class RecyclerAdapterVH(private val binding: RcItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class RecyclerAdapterProfileVH(private val binding: RcItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun setData(position: Int) {
             val d = getItem(position)
 
@@ -27,8 +27,8 @@ class RecyclerAdapterProfile():
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterVH {
-        return RecyclerAdapterVH(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterProfileVH {
+        return RecyclerAdapterProfileVH(
             RcItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -37,7 +37,7 @@ class RecyclerAdapterProfile():
         )
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapterVH, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerAdapterProfileVH, position: Int) {
         holder.setData(position)
     }
 
