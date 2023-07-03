@@ -16,6 +16,7 @@ import com.example.githubclone.databinding.FragmentSearchBinding
 import com.example.githubclone.ui.SearchFragment.adapter.SearchHistoryAdapter
 import com.example.githubclone.ui.SearchFragment.vm.SearchFragmentVM
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
@@ -133,9 +134,28 @@ class SearchFragment:Fragment(R.layout.fragment_search) {
                         llOrganizations.visibility = View.GONE
                         llJumpTo.visibility = View.GONE
 
-                        binding.tvRecentSearches.visibility = View.VISIBLE
-                        binding.tvClear.visibility = View.VISIBLE
-                        binding.rvHistory.visibility = View.VISIBLE
+//                        binding.tvRecentSearches.visibility = View.VISIBLE
+//                        binding.tvClear.visibility = View.VISIBLE
+//                        binding.rvHistory.visibility = View.VISIBLE
+
+                        lifecycleScope.launch {
+                            viewModel.historyList.collect {
+                                binding.rvHistory.adapter = adapter
+                                if (it.isEmpty()){
+                                    binding.tvFindYourStuff.visibility = View.VISIBLE
+                                    binding.tvDesc.visibility = View.VISIBLE
+                                }else{
+                                    binding.apply {
+                                        tvRecentSearches.visibility = View.VISIBLE
+                                        tvClear.visibility = View.VISIBLE
+                                        rvHistory.visibility  = View.VISIBLE
+                                        binding.tvFindYourStuff.visibility = View.GONE
+                                        binding.tvDesc.visibility = View.GONE
+                                    }
+                                    adapter.submitList(it)
+                                }
+                            }
+                        }
                     }
                 } else {
                     binding.apply {
